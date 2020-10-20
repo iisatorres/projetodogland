@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#)+x%rdq+vc(o2p3wa)@8ybnglea4(x)2=@6z4=4&47b$+!i8('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["projetodogland.herokuapp.com", "127.0.0.1"]
 
