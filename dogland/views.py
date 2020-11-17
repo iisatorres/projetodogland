@@ -30,8 +30,6 @@ def set_pet(request):
             pet.description = description
             if file:
                 pet.photo = file
-            else:
-                pet.phot = Null
             pet.save()
     else:
         pet = Pet.objects.create(email=email, phone=phone, city=city, description=description,
