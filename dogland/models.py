@@ -12,7 +12,7 @@ class Pet(models.Model):
     end_date = models.DateTimeField(null=True, blank=True)
     begin_date = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
-    photo = models.ImageField(upload_to='pet', blank=True, null=True)
+    photo = models.ImageField(upload_to='pet', blank=True, null=False)
 
     def __str__(self):
         return str(self.id)
