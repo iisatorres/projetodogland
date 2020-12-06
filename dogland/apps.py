@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class DoglandConfig(AppConfig):
-    name = 'dogland'
+class CoreConfig(AppConfig):
+    name = 'core'

@@ -8,3 +8,5 @@ from .models import Pet
 class PetAdmin(admin.ModelAdmin):
     list_display = ['id', 'city', 'user', 'active',]
     search_fields = ['id', 'user__username']
+
+

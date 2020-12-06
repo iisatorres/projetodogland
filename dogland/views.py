@@ -14,6 +14,7 @@ def logout_user(request):
 
 @login_required(login_url='/login/')
 def set_pet(request):
+    adress = request.POST.get('adress')
     city = request.POST.get('city')
     email = request.POST.get('email')
     phone = request.POST.get('phone')
@@ -24,6 +25,7 @@ def set_pet(request):
     if pet_id:
         pet = Pet.objects.get(id=pet_id)
         if user == pet.user:
+            pet.adress = adress
             pet.email = email
             pet.phone = phone
             pet.city = city
@@ -32,7 +34,7 @@ def set_pet(request):
                 pet.photo = file
             pet.save()
     else:
-        pet = Pet.objects.create(email=email, phone=phone, city=city, description=description,
+        pet = Pet.objects.create(email=email, phone=phone, adress=adress, city=city, description=description,
                                 user=user, photo=file)
     url = '/pet/detail/{}/'.format(pet.id)
     return redirect(url)
@@ -83,5 +85,4 @@ def submit_login(request):
         else:
             messages.error(request, 'Usuário/Senha inválidos. Favor tentar novamente.')
     return redirect('/login/')
-
 
